@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #656765;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    height: 100vh;
+    /* position: relative; */
+}
+
+
+
+h1{
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+h2{
+    font-size: x-large;
+}
+
+
+.postit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background-color: #0000006b; */
+    /* opacity: 0.2; */
+    background-image: linear-gradient(to top, #00000075 0%, transparent 50%);
+  }
+  @keyframes loadPostItYellow {
+    0%{
+        scale: 5;
+        z-index: 1;
+    }
+    100%{
+        /* transform: rotate(-5deg); */
+        scale: 1;
+    }
+    
+}
+  .yellow{
+    background-color: #f9fac9;
+    transform: rotate(-5deg);
+    animation: loadPostItYellow 2s;
+    animation-fill-mode: none;
+  }
+  .green{
+   background-color:  #cbfccb;
+   transform: rotate(5deg);
+   animation: loadPostItYellow 2s 0.5s;
+    animation-fill-mode: none;
+  }
+  .purple{
+   background-color:  #c7c7f6;
+   transform: rotate(-10deg);
+   animation: loadPostItYellow 2s 1s;
+    animation-fill-mode: none;
+  }
+
+  .postit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
+    height: 30%;
+    font-family: "Indie Flower", cursive;
+    box-shadow: 5px 5px 10px #00000082;
+    transition: all .7s;
+    
+}
+.postit:hover{
+    transform: rotate(0deg);
+    scale: 1.4;
+    box-shadow: 10px 10px 5px #00000082;
+    position: relative;
+    z-index: 1;
+    
+}
+
